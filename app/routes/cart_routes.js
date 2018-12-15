@@ -105,21 +105,6 @@ router.patch('/carts/:id', requireToken, (req, res) => {
     .catch(err => handle(err, res))
 })
 
-// DESTROY
-// DELETE /examples/5a7db6c74d55bc51bdf39793
-router.delete('/carts/:id', requireToken, (req, res) => {
-  Cart.findById(req.params.id)
-    .then(handle404)
-    .then(cart => {
-      // throw an error if current user doesn't own `example`
-      requireOwnership(req, cart)
-      // delete the example ONLY IF the above didn't throw
-      cart.remove()
-    })
-    // send back 204 and no content if the deletion succeeded
-    .then(() => res.sendStatus(204))
-    // if an error occurs, pass it to the handler
-    .catch(err => handle(err, res))
-})
+// DESTROY - user can't delete cart
 
 module.exports = router
