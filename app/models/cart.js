@@ -6,6 +6,12 @@ const cartSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  // owner: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Product',
+  //   required: true
+  // },
+  // maybe subtotal should actually be a virtual of summation of product prices
   subtotal: {
     type: Number
   },
@@ -21,3 +27,4 @@ const cartSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Cart', cartSchema)
+// needs a link to product
