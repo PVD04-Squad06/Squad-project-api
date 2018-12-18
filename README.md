@@ -7,3 +7,7 @@ Squad group project back end with Antonio, Michael, Rakshya and Greg
 4. Made cart route
 5. Registered product routes in server.js
 6. Registered cart routes in server.js
+
+12/17
+1. Deleted cart index route
+2. Add virtuals to cart model to calculate subtotal, tax and total

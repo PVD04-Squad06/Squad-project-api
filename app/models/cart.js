@@ -5,26 +5,25 @@ const cartSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
-  },
-  // owner: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'Product',
-  //   required: true
-  // },
-  // maybe subtotal should actually be a virtual of summation of product prices
-  subtotal: {
-    type: Number
-  },
-  tax: {
-    type: Number
-  },
-  total: {
-    type: Number
   }
 },
 {
-  timestamps: true
+  timestamps: true,
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true }
+})
+
+cartSchema.virtual('subtotal').get(function () {
+  // add up prices of all products' in cart
+  // return this.
+})
+cartSchema.virtual('tax').get(function () {
+  // multiply subtotal with 0.07 (tax = 7%)
+  // return this.
+})
+cartSchema.virtual('total').get(function () {
+  // subtotal + tax
+  // return this.
 })
 
 module.exports = mongoose.model('Cart', cartSchema)
-// needs a link to product
