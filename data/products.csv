@@ -1,6 +1,87 @@
-name,price,description,image
-Eridanus,450,Stylish,https://is4.revolveassets.com/images/p4/n/c/LOVF-WD585_V1.jpg
-Cassia,300,Feel the luxury,https://is4.revolveassets.com/images/p4/n/d/LOVF-WD556_V1.jpg
-Leo,320,Silk blend,https://is4.revolveassets.com/images/p4/n/z/HOOF-WD82_V1.jpg
-Lyra,375,Dry clean only,https://is4.revolveassets.com/images/p4/n/d/SELF-WD18_V1.jpg
-Delphinus,900,Made in Morocco,https://weselectdresses.com/wp-content/uploads/2018/06/REVOLVE-Karla-Polka-Dot-Black-White-Dress-1.jpg
+name,price,description,image,gender
+LEVI'S,$98.00,501 Skinny,https://imgur.com/859kbLu,Women
+Commando,$98.00,Perfect Control Faux Leather Legging,https://imgur.com/859kbLu,Women
+AL,$46.00,Bodysuit,https://imgur.com/oCQ4zPO,Women
+BLANKNYC,$98.00,Vegan Leather Pant,https://imgur.com/Eicux4Z,Women
+by the way.,$88.00,Aubrey Off Shoulder Jumpsuit,https://imgur.com/3fel9fy,Women
+Dr. Denim,$89.00,Plenty Jean,https://imgur.com/qtSwrng,Women
+Michael Lauren,$73.00,Mathis Long Sleeve Tee,https://imgur.com/BuzOM8B,Women
+SPANX,$68.00,Look At Me Now Leggins,https://imgur.com/Mrmb7ym,Women
+Hanes x Carla,$30.00,The Crop Tee,https://imgur.com/jtvVMML,Women
+David Lerner,$110.00,Wrap Skirt,https://imgur.com/w3MTJG8,Women
+House of Harlow 1960,$178.00,X Revole MOA Sweater,https://imgur.com/2rqawkA,Women
+Plush,$92.00,Fleece Lined Liquid Moto Legging,https://imgur.com/WrLNh4F,Women
+BB Dakota,$150.00,Conrad Leather Skirt,https://imgur.com/dFqBFU7,Women
+Bobi,$62.00,Jersey Jogger,https://imgur.com/rsLpfMt,Women
+AGOLDE,$188.00,Riley,https://imgur.com/8K3JV7H,Women
+BB Dakota,$80.00,Jack By BB Dakota Speak Now Jacket,https://imgur.com/AfFlwvB,Women
+LIONESS,$61.00,Cypress Pant,https://imgur.com/ryEONAD,Women
+by the way.,$56.00,Bobbie V Neck Sweater,https://imgur.com/qKQqDR9,Women
+Lovers & Friends,$96.00,Love Happy Dress,https://imgur.com/geUJ0Ok,Women
+Bardot,$99.00,Oskar Bodysuit,https://imgur.com/MQlkKq0,Women
+LEVI's,$98.00,Wedgie Icon Fit,https://imgur.com/cCvHHqt,Women
+Hanes x Carla,$30.00,The Baby Tee,https://imgur.com/eQvTE7N,Women
+House of Harlow 1960,$98.00,X Revolve MOA Bodysuit,https://imgur.com/Pzu46rC,Women
+AGOLDE,$128.00,Jaden High Rise Shorts,https://imgur.com/qvw04DS,Women
+AGOLDE,$188.00,90's Fit,https://imgur.com/ag629ZL,Women
+by the way.,$38.00,Jocelyn Scoop Back Bodysuit,https://imgur.com/JmKQZGv,Women
+"Young, Fabulous & Broke",$158.00,Puffer Jacket,https://imgur.com/xc89j1A,Women
+by the way.,$58.00,Jezabel Faux Leather Midi Skirt,https://imgur.com/LIYYRYw,Women
+LPA,$88.00,Turtleneck Crop Top,https://imgur.com/jbCpjYv,Women
+Michael Lauren,$70.00,Fergus Top,https://imgur.com/jo3d8WF,Women
+BB Dakota,$88.00,Jack By BB Dakota Tis The Sequin Sweater,https://imgur.com/nZi6hS6,Women
+BLANKNYC,$136.00,Black Noise Faux Fur Jacket,https://imgur.com/hbZDhXJ,Women
+Lovers & Friends,$138.00,Alyssa Top,https://imgur.com/2YEb5Xn,Women
+SPANX,$68.00,Look At Me Now Leggins,https://imgur.com/azRPmPG,Women
+by the way.,$46.00,Kam Long Sleeve Open Back Bodysuit,https://imgur.com/TRRDXEy,Women
+by the way.,$58.00,Marrie Flannel Puff Sleeve Top,https://imgur.com/ljAiMma,Women
+About Us,$52.00,Mikaela Peplum Top,https://imgur.com/Mghfr20,Women
+Michael Costello,$298.00,Paris Gown,https://imgur.com/dgCVKul,Women
+Commando,$74.00,Ballet Body Thong Bodysuit,https://imgur.com/0VoYWvS,Women
+AGOLDE,$198.00,Riley High Rise Straight Crop,https://imgur.com/AdsNAEm,Women
+BB Dakota,$88.00,Jack By BB Dakota All Over It Cardigan,https://imgur.com/grew1P7,Women
+Thistle & Sprite,$98.00,Meserole Bodysuit With Collar,https://imgur.com/NscfXZN,Women
+Commando,$98.00,Perfect Control Faux Patent Legging,https://imgur.com/KYSZFEe,Women
+About Us,$58.00,Madeline Surplice Top,https://imgur.com/g9Ucdz9,Women
+LEVI'S,$33.00,501 Short,https://imgur.com/Zf6MspR,Women
+About Us,$82.00,Kaitlyn Faux Fur Jacket,https://imgur.com/sqwmuko,Women
+AGOLDE,$158.00,Spohie Hi Rise Skinny,https://imgur.com/D3m8Kop,Women
+Danielle Guizio,$108.00,Zita Mesh Corset,https://imgur.com/zYON5CJ,Women
+Splendid,$58.00,Classic Turtleneck,https://imgur.com/zV0VWTj,Women
+About Us,$66.00,Rory Lace Dress,https://imgur.com/gGNQEVK,Women
+John Elliot,$139.00,Hooded Villain Sweatshirt,https://imgur.com/9jAA3RH,Men
+Stussy,$77.00,Tonal Check Jacket,https://imgur.com/NF1b4bj,Men
+Stussy,$60.00,Basic Sweatpant,https://imgur.com/E8IkVbI,Men
+John Elliot,$72.00,Curve U Neck,https://imgur.com/R5GPnms,Men
+LEVI'S Premium,$128.00,Type III Sherpa Trucker,https://imgur.com/liWURdO,Men
+Rolla's,$69.00,Beach Boy Shirt,https://imgur.com/nmjFfJO,Men
+Off-White,$249.00,Gradient Over Tee,https://imgur.com/5YVQRJJ,Men
+Stussy,$180.00,Reversible Micro Fleece Jacket,https://imgur.com/xZ6mXa6,Men
+Stussy,$95.00,Smooth Stock Applique Hoodie,https://imgur.com/oiFMpOE,Men
+Canada Goose,$950.00,Langford Parka,https://imgur.com/vdCFn0X,Men
+Rolla's,$179.00,Denim Sherpa Fauz Fur Jacket,https://imgur.com/NdRJZEy,Men
+Citizen's of Humanity,$131.00,Premium Vintage Core,https://imgur.com/GfTsPJT,Men
+Off-White,$245.00,Wing Off Oversized Tee,https://imgur.com/CrxA57u,Men
+Publish,$90.00,Legacy Jogger,https://imgur.com/vKy6sbO,Men
+Rolla's,$69.00,Beach Boy Echo Shirt,https://imgur.com/Npn5q7A,Men
+Stussy,$64.00,Basic Stussy Pullover,https://imgur.com/GNwvDKW,Men
+Alpha Industries,$130.00,MA-1 Coalition Forces Flight Jacket,https://imgur.com/ZBfGFGb,Men
+Double Rainbouu,$93.00,Hawaiian Shirt,https://imgur.com/jsOivJt,Men
+Stussy,$100.00,Basic Hoodie,https://imgur.com/gFGCrSR,Men
+Off-White,$263.00,Bernini Tee,https://imgur.com/3jjAd0A,Men
+Publish,$52.00,Chet,https://imgur.com/1oFr4E0,Men
+John Elliot,$82.00,Mercer Tee,https://imgur.com/unM2NyF,Men
+Zanerobe,$129.00,Waffle Blockshot Fleece Jogger,https://imgur.com/BIOjRur,Men
+Calvin Klein,$31.00,Flocked Calvin Tee,https://imgur.com/LF3Upc8,Men
+Champion Reverse Weave,$95.00,68 Weave Crew Tie Dye Sweatshirt,https://imgur.com/ruNGCL1,Men
+Civil Regeme,$75.00,Holy Floral Long Sleeve Shirt,https://imgur.com/rloWkeq,Men
+Helmet Lang,$123.00,Taxi Project New York Tee,https://imgur.com/kyDfzyq,Men
+John Elliot,$198.00,Escobar Sweatpants,https://imgur.com/RBNtB0X,Men
+Ksubi,$58.00,Archive LSD Tee,https://imgur.com/IDkyHGH,Men
+The North Face,$25.00,Half Dome Tee,https://imgur.com/WPHT6Ow,Men
+Zanerobe,$109.00,Flintlock Hoodie,https://imgur.com/XKoxGim,Men
+Zanerobe,$149.00,Unblockshot Chino,https://imgur.com/tzWEfpM,Men
+Champion Reverse Weave,$140.00,Hooded Sweatshirt,https://imgur.com/ieEHlAV,Men
+Civil Regeme,$75.00,Rosary Short Sleeve Shirt,https://imgur.com/icyVWzw,Men
+Ksubi,$151.00,Van Winkle Rockafella Slash,https://imgur.com/aMoB8TL,Men
+Ksubi,$215.00,Van Winkle Ace,https://imgur.com/LtNWmTM,Men
