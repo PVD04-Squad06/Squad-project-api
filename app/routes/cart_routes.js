@@ -36,14 +36,24 @@ router.get('/cart', (req, res) => {
 })
 // PUT - user sends a list of items to their cart
 router.patch('/cart', (req, res) => {
-  console.log('req body:')
-  console.log(req.body)
+  console.log('req body:', req.body)
   var cart = new Cart({ items: req.body.cart.items })
-  res.status(200).json({ cart: cart })
-  Product.find({_id: {req.body.cart }})
-
+  var shoppingCart = cart.items
+  var order = {}
+  for (let i = 0; i < shoppingCart.length; i++) {
+    console.log('inside shopping cart', shoppingCart[i])
+    Product.find({_id: shoppingCart[i]})
+      .then(products => {
+        return products.map(product => product.toObject())
+      })
+      .then(products => order << products)
+      // .then(console.log(products))
+      // .then(products => res.status(200).json({ products: products }))
+      .catch(err => handle(err, res))
+  }
+  console.log('order', order)
+  // res.status(200).json({ shoppingCart: shoppingCart })
 })
-
 
 // SHOW
 // GET /examples/5a7db6c74d55bc51bdf39793
