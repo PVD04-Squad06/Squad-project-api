@@ -40,7 +40,10 @@ router.patch('/cart', (req, res) => {
   console.log(req.body)
   var cart = new Cart({ items: req.body.cart.items })
   res.status(200).json({ cart: cart })
+  Product.find({_id: {req.body.cart }})
+
 })
+
 
 // SHOW
 // GET /examples/5a7db6c74d55bc51bdf39793
