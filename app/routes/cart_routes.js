@@ -29,7 +29,18 @@ const requireToken = passport.authenticate('bearer', { session: false })
 // instantiate a router (mini app that only handles routes)
 const router = express.Router()
 
-// INDEX - user can't see all carts
+// INDEX - user gets an empty cart
+router.get('/cart', (req, res) => {
+  var cart = new Cart({ items: [] })
+  res.status(201).json({ cart: cart })
+})
+// PUT - user sends a list of items to their cart
+router.patch('/cart', (req, res) => {
+  console.log('req body:')
+  console.log(req.body)
+  var cart = new Cart({ items: req.body.cart.items })
+  res.status(200).json({ cart: cart })
+})
 
 // SHOW
 // GET /examples/5a7db6c74d55bc51bdf39793
@@ -54,7 +65,7 @@ router.get('/carts/:id', requireToken, (req, res) => {
   })
 })
 
-// CREATE - 
+// CREATE -
 // POST /examples
 router.post('/carts', requireToken, (req, res) => {
   // set owner of new example to be current user
@@ -76,6 +87,7 @@ router.post('/carts', requireToken, (req, res) => {
 router.patch('/carts/:id', requireToken, (req, res) => {
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
+  console.log(req.body);
   delete req.body.cart.owner
 
   Cart.findById(req.params.id)

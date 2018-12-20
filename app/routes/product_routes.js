@@ -77,8 +77,6 @@ router.get('/products/:id', requireToken, (req, res) => {
     .catch(err => handle(err, res))
 })
 
-
-
 // CREATE  - user will not be able to create products
 // UPDATE - user will not be able to create products
 // DESTROY - user will not be able to create products
