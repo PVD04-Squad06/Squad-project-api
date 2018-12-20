@@ -43,6 +43,27 @@ router.get('/products', requireToken, (req, res) => {
     // if an error occurs, pass it to the handler
     .catch(err => handle(err, res))
 })
+// Get all womens-clothing
+router.get('/products/womens-clothing', (req, res) => {
+  console.log('got here')
+  Product.find({gender: 'Women'})
+    .then(products => {
+      return products.map(product => product.toObject())
+    })
+    .then(products => res.status(200).json({ products: products }))
+    .catch(err => handle(err, res))
+})
+
+// Get all mens-clothing
+router.get('/products/mens-clothing', (req, res) => {
+  console.log('got here')
+  Product.find({gender: 'Men'})
+    .then(products => {
+      return products.map(product => product.toObject())
+    })
+    .then(products => res.status(200).json({ products: products }))
+    .catch(err => handle(err, res))
+})
 
 // SHOW
 // GET /examples/5a7db6c74d55bc51bdf39793

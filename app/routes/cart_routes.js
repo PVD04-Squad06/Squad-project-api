@@ -5,6 +5,7 @@ const passport = require('passport')
 
 // pull in Mongoose model for examples
 const Cart = require('../models/cart')
+const Product = require('../models/product')
 
 // we'll use this to intercept any errors that get thrown and send them
 // back to the client with the appropriate status code
@@ -28,35 +29,56 @@ const requireToken = passport.authenticate('bearer', { session: false })
 // instantiate a router (mini app that only handles routes)
 const router = express.Router()
 
-// INDEX - user can't see all carts
-// // GET /examples
-// router.get('/carts', requireToken, (req, res) => {
-//   Cart.find()
-//     .then(carts => {
-//       // `examples` will be an array of Mongoose documents
-//       // we want to convert each one to a POJO, so we use `.map` to
-//       // apply `.toObject` to each one
-//       return carts.map(cart => cart.toObject())
-//     })
-//     // respond with status 200 and JSON of the examples
-//     .then(carts => res.status(200).json({ carts: carts }))
-//     // if an error occurs, pass it to the handler
-//     .catch(err => handle(err, res))
-// })
+// INDEX - user gets an empty cart
+router.get('/cart', (req, res) => {
+  var cart = new Cart({ items: [] })
+  res.status(201).json({ cart: cart })
+})
+// PUT - user sends a list of items to their cart
+router.patch('/cart', (req, res) => {
+  console.log('req body:', req.body)
+  var cart = new Cart({ items: req.body.cart.items })
+  var shoppingCart = cart.items
+  var order = {}
+  for (let i = 0; i < shoppingCart.length; i++) {
+    console.log('inside shopping cart', shoppingCart[i])
+    Product.find({_id: shoppingCart[i]})
+      .then(products => {
+        return products.map(product => product.toObject())
+      })
+      .then(products => order << products)
+      // .then(console.log(products))
+      // .then(products => res.status(200).json({ products: products }))
+      .catch(err => handle(err, res))
+  }
+  console.log('order', order)
+  // res.status(200).json({ shoppingCart: shoppingCart })
+})
 
 // SHOW
 // GET /examples/5a7db6c74d55bc51bdf39793
 router.get('/carts/:id', requireToken, (req, res) => {
-  // req.params.id will be set based on the `:id` in the route
-  Cart.findById(req.params.id)
-    .then(handle404)
-    // if `findById` is succesful, respond with 200 and "example" JSON
-    .then(cart => res.status(200).json({ cart: cart.toObject() }))
-    // if an error occurs, pass it to the handler
-    .catch(err => handle(err, res))
+  // req.params.id will be set based on the `product id` in the route
+  var productId = req.params.id
+  var cart = new Cart(req.session.cart ? req.session.cart : {items: {}})
+
+  Product.findById(productId, function (err, product) {
+    if (err) {
+      return res.redirect('/')
+    }
+    cart.add(product, product.id)
+    req.session.cart = cart
+    console.log(req.session.cart)
+    res.redirect('/')
+    // .then(handle404)
+    // // if `findById` is succesful, respond with 200 and "example" JSON
+    // .then(cart => res.status(200).json({ cart: cart.toObject() }))
+    // // if an error occurs, pass it to the handler
+    // .catch(err => handle(err, res))
+  })
 })
 
-// CREATE
+// CREATE -
 // POST /examples
 router.post('/carts', requireToken, (req, res) => {
   // set owner of new example to be current user
@@ -78,6 +100,7 @@ router.post('/carts', requireToken, (req, res) => {
 router.patch('/carts/:id', requireToken, (req, res) => {
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
+  console.log(req.body);
   delete req.body.cart.owner
 
   Cart.findById(req.params.id)
