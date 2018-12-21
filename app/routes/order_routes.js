@@ -32,7 +32,11 @@ const router = express.Router()
 // POST /examples
 router.post('/orders', requireToken, (req, res) => {
   // set owner of new example to be current user
-  console.log(req.body[1])
+  console.log(req.body)
+  console.log(req.body.owner)
+
+  // req.body = JSON.parse(req.body)
+  // console.log(req.body)
   // req.body.order.owner = req.user.id
   // Order.create(req.body.order)
   //   // respond to succesful `create` with status 201 and JSON of new "example"
