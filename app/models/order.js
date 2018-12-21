@@ -7,18 +7,15 @@ const orderSchema = new mongoose.Schema({
     required: true
   },
   cart: {
-    type: Object,
+    type: Array,
     required: true
   },
   name: {
     type: String,
-    required: true
-  },
-  paymentId: {
-    type: String,
-    required: true
+    required: false
   }
-}, {
+},
+{
   timestamps: true
 })
 
