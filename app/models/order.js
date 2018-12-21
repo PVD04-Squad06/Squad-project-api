@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const orderSchema = new mongoose.Schema({
-  user: {
+  owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
@@ -9,10 +9,6 @@ const orderSchema = new mongoose.Schema({
   cart: {
     type: Array,
     required: true
-  },
-  name: {
-    type: String,
-    required: false
   }
 },
 {
