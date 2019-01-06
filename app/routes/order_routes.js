@@ -18,7 +18,7 @@ const customErrors = require('../../lib/custom_errors')
 const handle404 = customErrors.handle404
 // we'll use this function to send 401 when a user tries to modify a resource
 // that's owned by someone else
-const requireOwnership = customErrors.requireOwnership
+// const requireOwnership = customErrors.requireOwnership
 
 // passing this as a second argument to `router.<verb>` will make it
 // so that a token MUST be passed for that route to be available
@@ -60,7 +60,7 @@ router.get('/orders', requireToken, (req, res) => {
     })
     // respond with status 200 and JSON of the examples
     .then(orders => {
-      res.status(200).json({ orders: orders })
+      res.status(200).json({ order: orders })
       // if an error occurs, pass it to the handler
         .catch(err => handle(err, res))
     })
