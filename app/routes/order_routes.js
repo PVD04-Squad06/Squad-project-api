@@ -60,7 +60,7 @@ router.get('/orders', requireToken, (req, res) => {
     })
     // respond with status 200 and JSON of the examples
     .then(orders => {
-      res.status(200).json({ order: orders })
+      res.status(200).json({ orders: orders })
       // if an error occurs, pass it to the handler
         .catch(err => handle(err, res))
     })
