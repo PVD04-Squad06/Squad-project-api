@@ -18,7 +18,7 @@ const customErrors = require('../../lib/custom_errors')
 const handle404 = customErrors.handle404
 // we'll use this function to send 401 when a user tries to modify a resource
 // that's owned by someone else
-const requireOwnership = customErrors.requireOwnership
+// const requireOwnership = customErrors.requireOwnership
 
 // passing this as a second argument to `router.<verb>` will make it
 // so that a token MUST be passed for that route to be available
@@ -31,22 +31,21 @@ const router = express.Router()
 // CREATE
 // POST /examples
 router.post('/orders', requireToken, (req, res) => {
-  // set owner of new example to be current user
+  // req.body is an array of product objects
   console.log(req.body)
-  console.log(req.body.owner)
 
   // req.body = JSON.parse(req.body)
   // console.log(req.body)
   // req.body.order.owner = req.user.id
-  // Order.create(req.body.order)
-  //   // respond to succesful `create` with status 201 and JSON of new "example"
-  //   .then(order => {
-  //     res.status(201).json({ order: order.toObject() })
-  //   })
-  //   // if an error occurs, pass it off to our error handler
-  //   // the error handler needs the error message and the `res` object so that it
-  //   // can send an error message back to the client
-  //   .catch(err => handle(err, res))
+  Order.create({cart: req.body, owner: req.user.id})
+    // respond to succesful `create` with status 201 and JSON of new "example"
+    .then(order => {
+      res.status(201).json({ order: order.toObject() })
+    })
+    // if an error occurs, pass it off to our error handler
+    // the error handler needs the error message and the `res` object so that it
+    // can send an error message back to the client
+    .catch(err => handle(err, res))
 })
 
 // INDEX
